@@ -49,8 +49,9 @@
 
     header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(251,247,240,.86);backdrop-filter:blur(12px);border-bottom:1px solid rgba(110,42,56,.10)}
     nav{height:82px;max-width:var(--wrap);margin:auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between;gap:24px}
-    .brand{display:flex;align-items:center;gap:10px;font-family:'Italiana',serif;letter-spacing:.16em;font-size:1.18rem}
-    .brand img{width:46px;height:46px;object-fit:contain}
+    .brand{display:flex;align-items:center;font-family:'Italiana',serif;letter-spacing:.16em;font-size:1.18rem;flex-shrink:0}
+    .brand img{width:128px;height:auto;object-fit:contain}
+    .brand span{display:none}
     .nav-links{display:flex;align-items:center;gap:26px;list-style:none;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase}
     .nav-links a{position:relative}
     .nav-links a:after{content:"";position:absolute;left:0;bottom:-7px;width:0;height:1px;background:var(--gold);transition:.3s}
@@ -136,7 +137,7 @@
     .inquire{background:var(--white)}
     .inquire-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px;align-items:start}.inquire-copy h2{font-size:clamp(2.8rem,5vw,4.6rem);margin:12px 0 18px}.inquire-copy p{color:var(--muted)}
     .form-shell{background:var(--ivory);border-radius:28px;padding:36px;box-shadow:var(--shadow);border:1px solid rgba(198,161,91,.28)}
-    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.field{display:flex;flex-direction:column;gap:7px}.field.full{grid-column:1/-1}.field label{font-size:.7rem;letter-spacing:.13em;text-transform:uppercase;color:var(--burgundy);font-weight:600}.field input,.field select,.field textarea{width:100%;border:1px solid rgba(110,42,56,.2);background:var(--white);padding:13px 14px;border-radius:12px;color:var(--ink)}.field textarea{min-height:120px;resize:vertical}.check-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:4px}.check{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:.9rem}.check input{accent-color:var(--burgundy)}.submit{margin-top:20px;display:flex;gap:16px;align-items:center;flex-wrap:wrap}.form-note{font-size:.82rem;color:var(--muted)}
+    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.field{display:flex;flex-direction:column;gap:7px}.field.full{grid-column:1/-1}.field label{font-size:.7rem;letter-spacing:.13em;text-transform:uppercase;color:var(--burgundy);font-weight:600}.field input,.field select,.field textarea{width:100%;border:1px solid rgba(110,42,56,.2);background:var(--white);padding:13px 14px;border-radius:12px;color:var(--ink)}.field textarea{min-height:120px;resize:vertical}.check-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:4px}.check{display:flex;align-items:center;justify-content:flex-start;gap:11px;color:var(--muted);font-size:.9rem;line-height:1.35;min-width:0}.check input[type="checkbox"]{width:18px!important;height:18px!important;min-width:18px;flex:0 0 18px;margin:0;padding:0;accent-color:var(--burgundy)}.submit{margin-top:20px;display:flex;gap:16px;align-items:center;flex-wrap:wrap}.form-note{font-size:.82rem;color:var(--muted)}
 
     footer{background:#241015;color:rgba(255,255,255,.68);padding:68px 0 28px}.footer-grid{display:grid;grid-template-columns:1.2fr .8fr .8fr 1fr;gap:38px}.footer-brand img{width:78px;margin-bottom:12px}.footer-brand h3{color:white;letter-spacing:.14em;font-size:1.4rem}.footer-brand .tag{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--gold-soft);margin-top:6px}.footer-col h4{font-family:'Jost',sans-serif;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:14px}.footer-col a,.footer-col p{display:block;margin:7px 0;font-size:.88rem}.footer-bottom{margin-top:45px;padding-top:20px;border-top:1px solid rgba(255,255,255,.1);font-size:.77rem;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 
@@ -147,22 +148,18 @@
       .intro-grid,.design-grid,.story-grid,.inquire-grid{grid-template-columns:1fr}.service-grid{grid-template-columns:repeat(2,1fr)}.bar-grid{grid-template-columns:repeat(2,1fr)}.why-grid{grid-template-columns:repeat(2,1fr)}.process-grid{grid-template-columns:repeat(2,1fr)}.footer-grid{grid-template-columns:1fr 1fr}.split-feature{grid-template-columns:1fr}
     }
     @media (max-width:600px){
-      .section{padding:80px 0}.wrap{padding:0 20px}nav{padding:0 20px}.brand span{display:none}.hero{padding-top:128px}.service-grid,.bar-grid,.why-grid,.process-grid,.form-grid,.check-grid,.footer-grid{grid-template-columns:1fr}.feature-card{padding:32px;min-height:430px}.form-shell{padding:25px}.field.full{grid-column:auto}.intro-grid,.design-grid,.story-grid,.inquire-grid{gap:40px}
+      .section{padding:80px 0}.wrap{padding:0 20px}nav{padding:0 16px;gap:12px;height:78px}.brand img{width:104px}.hero{padding-top:124px}.service-grid,.bar-grid,.why-grid,.process-grid,.form-grid,.check-grid,.footer-grid{grid-template-columns:1fr}.check-grid{gap:14px}.check{font-size:.92rem}.feature-card{padding:32px;min-height:430px}.form-shell{padding:24px 20px}.field.full{grid-column:auto}.intro-grid,.design-grid,.story-grid,.inquire-grid{gap:40px}nav>.btn{padding:10px 16px;font-size:.68rem;letter-spacing:.09em}
     }
   </style>
 </head>
 <body id="top">
 <header>
   <nav>
-    <a class="brand" href="#top"><img src="IMG_4858.png" alt="Zahana logo"><span>ZAHANA</span></a>
+    <a class="brand" href="#top"><img src="zahana-logo.png" alt="Zahana logo"><span>ZAHANA</span></a>
     <ul class="nav-links" id="navLinks">
-      <li><a href="#services">Services</a></li>
-      <li><a href="#bar">The Zahana Bar</a></li>
-      <li><a href="#celebrations">Celebrations</a></li>
-      <li><a href="#corporate">Corporate</a></li>
-      <li><a href="#story">About</a></li>
+      <li><a href="#services">Services</a></li><li><a href="#celebrations">Celebrations</a></li><li><a href="#corporate">Corporate</a></li><li><a href="#bar">The Zahana Bar</a></li><li><a href="#story">About</a></li><li><a href="#inquire">Inquire</a></li>
     </ul>
-    <a href="#inquire" class="btn btn-outline">Contact Us</a>
+    <a href="#inquire" class="btn btn-outline">Plan Your Event</a>
     <button class="nav-toggle" id="navToggle" aria-label="Open menu">☰</button>
   </nav>
 </header>
@@ -170,7 +167,7 @@
 <main>
   <section class="hero">
     <div class="hero-inner reveal">
-      <img class="hero-logo" src="IMG_4858.png" alt="Zahana">
+      <img class="hero-logo" src="zahana-logo.png" alt="Zahana">
       <span class="eyebrow">Events · Elevated</span>
       <h1>The Art of a Beautifully Curated Event.</h1>
       <p class="hero-copy">From the first detail to the final farewell, Zahana brings together thoughtful planning, beautiful design, exceptional hospitality and unforgettable experiences.</p>
@@ -281,16 +278,10 @@
 
 <footer>
   <div class="wrap"><div class="footer-grid">
-    <div class="footer-brand"><img src="IMG_4858.png" alt="Zahana"><h3>ZAHANA</h3><div class="tag">Events. Elevated.</div><p style="margin-top:18px;font-size:.88rem">Planning · Design · Catering · Bar · Entertainment · Photography · Hospitality</p></div>
+    <div class="footer-brand"><img src="zahana-logo.png" alt="Zahana"><h3>ZAHANA</h3><div class="tag">Events. Elevated.</div><p style="margin-top:18px;font-size:.88rem">Planning · Design · Catering · Bar · Entertainment · Photography · Hospitality</p></div>
     <div class="footer-col"><h4>Explore</h4><a href="#services">Services</a><a href="#celebrations">Celebrations</a><a href="#corporate">Corporate</a><a href="#bar">The Zahana Bar</a></div>
     <div class="footer-col"><h4>Zahana</h4><a href="#story">Our Story</a><a href="#inquire">Inquire</a><a href="#top">Home</a><a href="#services">FAQ</a></div>
-    <div class="footer-col"><h4>Contact</h4><a href="mailto:zahanaevents@gmail.com">zahanaevents@gmail.com</a><a href="tel:+15717781881">571-778-1881</a><p>Northern Virginia<br>Washington DC<br>Maryland</p><p class="social-links">
-      <a href="https://www.instagram.com/zahanaevents/" target="_blank" rel="noopener noreferrer" aria-label="Zahana Events on Instagram">Instagram</a>
-      <span> · </span>
-      <span>Facebook</span>
-      <span> · </span>
-      <span>TikTok</span>
-    </p></div>
+    <div class="footer-col"><h4>Contact</h4><a href="mailto:zahanaevents@gmail.com">zahanaevents@gmail.com</a><a href="tel:+15717781881">571-778-1881</a><p>Northern Virginia<br>Washington DC<br>Maryland</p><p>Instagram · Facebook · TikTok</p></div>
   </div><div class="footer-bottom"><span>© <span id="year"></span> Zahana. All rights reserved.</span><span>Thoughtfully curated. Beautifully experienced.</span></div></div>
 </footer>
 
